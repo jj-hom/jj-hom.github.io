@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Joshua Hom Portfolio</title>
+    <link rel="stylesheet" href="../proj.css">
+</head>
+
+<body>
+
+<!-- Navagation Bar-->
+<div class="NAVBAR">
+    <div class="">
+        <div class="NBCOL"><a href="../../index.html"> HOME </a></div>
+        <div class="NBCOL"><a href="../../index.html#about"> ABOUT </a></div>
+        <div class="NBCOL"><a href="../../index.html#projects"> PROJECTS </a></div>
+        <a href="mailto: joshjhom@gmail.com"><img class="NBLOGO NBLsmol" src="../../logo/mail.jpg"></a>
+        <a href="https://github.com/jj-hom" target="_blank"><img class="NBLOGO" src="../../logo/github.jpg"></a>
+        <a href="https://www.linkedin.com/in/joshua-hom/" target="_blank"><img class="NBLOGO" src="../../logo/linkedin.jpg"></a>
+        <a href="miccode.html" target="_blank"><img class="NBLOGO" src="../../logo/code.jpeg" style="margin-left:-4px;"></a>
+        <img class="NBLOGO" src="../../logo/cat.gif" style="margin-right:20px;"></a>
+    </div>
+</div>
+<div class="NBSPACE"></div>
+
+<div class="background">
+    <div class="title">Microphone Interface</div>
+    <img class="timg" src="../../img/MIgroup.JPG">
+    <br><br>
+    <div class="tdesc">This project was a result of an embedded systems senior design course at Purdue (ECE477).  
+                    The objective of the course was to work in a team to create an embedded hardware product while 
+                    simulating a workplace environment.  Throughout the semester, my team and I gained experience in
+                    documentation, requirements definition, parts selection, embedded software design and creation, 
+                    hardware prototyping, printed circuit board layout, and physical prototype construction. Our project
+                    was a microphone interface intended to be used with analog audio microphones. 
+                    This interface would apply various DSP effects to the audio and pass it to an analog output.
+    </div>
+
+    <br><br>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'Gallery')"  id="defaultOpen">Gallery</button>
+        <button class="tablinks" onclick="openCity(event, 'Documents')">Documents</button>
+        <button class="tablinks" onclick="openCity(event, 'Links')">Links</button>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+    
+    <!-- Tab content -->
+    <div id="Gallery" class="tabcontent">
+        <ul class="image-gallery">
+            <li><img class="myImages" id="myImg" src="../../img/mic1.jpg" 
+                alt="The PCB with all parts soldered and assembled.">
+            </li>
+            <li><img class="myImages" id="myImg" src="../../img/mic2.jpg" 
+                alt="The final product in its packaging.">
+            </li>
+            <li><img class="myImages" id="myImg" src="../../img/mic3.jpg" 
+                alt="An X-ray of our QFN codec chip to make sure all pins were in contact.">
+            </li>
+            <li><img class="myImages" id="myImg" src="../../img/mic4.png" 
+                alt="One of the final revisions of our PCB layout.  Most of it was designed by
+                     me.">
+            </li>
+            <li><img class="myImages" id="myImg" src="../../img/mic5.png" 
+                alt="One of the final revisions of our schematic.">
+            </li>
+            <li><img class="myImages" id="myImg" src="../../img/MIgroup.JPG" 
+                alt="The team and I presenting our project in Purdue's SPARK Challenge.  
+                From left to right: Jakub, Schubo, Me, and Liam.">
+            </li>
+            <li><img class="myImages" id="myImg" src="../../img/mic6.png" 
+                alt="The 3D model of our package in Blender.">
+            </li>
+            <li><img class="myImages" id="myImg" src="../../img/mic7.jpg" 
+                alt="Our inital idea of our block diagram.">
+            </li>
+            <li><img class="myImages" id="myImg" src="../../img/mic8.png" 
+                alt="Final block diagram.">
+            </li>
+            <li><img class="myImages" id="myImg" src="../../img/mic9.png" 
+                alt="Prototyping the LCD screen.">
+            </li>
+            <li><img class="myImages" id="myImg" src="../../img/mic10.jpg" 
+                alt="Prototyping the codec audio circuit.">
+            </li>
+            <li><img class="myImages" id="myImg" src="../../img/mic11.jpg" 
+                alt="Oscilloscope caputre of a rotary encoder pulse.">
+            </li>
+        </ul>
+    </div>
+    
+
+    <div id="Documents" class="tabcontent">
+		<div id="content">
+			<!-- Homework assignments are stored here -->
+			<h2><u>Project Reports:</u></h2>
+			<div id="document">
+			<h2><a href="../../docs/A0 - Initial Project Proposal.pdf" target="_blank" class="tablink">A0 - Initial Project Proposal</a></h2>
+			<h2><a href="../../docs/A1 - Final Project Proposal.pdf" target="_blank" class="tablink">A1 - Final Project Proposal</a></h2>
+			<h2><a href="../../docs/A2 - Functional Specification.pdf" target="_blank" class="tablink">A2 - Functional Specification</a></h2>
+			<h2><a href="../../docs/A3 - Software Overview.pdf" target="_blank" class="tablink">A3 - Software Overview</a></h2>
+			<h2><a href="../../docs/A4 - Electrical Overview.pdf" target="_blank" class="tablink">A4 - Electrical Overview</a></h2>
+			<h2><a href="../../docs/A5 - Component Analysis.pdf" target="_blank" class="tablink">A5 - Component Analysis</a></h2>
+			<h2><a href="../../docs/A6 - Mechanical Overview Template.pdf"target="_blank" class="tablink">A6 - Mechanical Overview</a></h2>
+			<h2><a href="../../docs/A7 - Bill of Materials.pdf" target="_blank" class="tablink">A7 - Bill of Materials</a></h2>
+			<h2><a href="../../docs/A8 - Software Formalization.pdf" target="_blank" class="tablink">A8 - Software Formalization</a></h2>
+			<h2><a href="../../docs/A9 - Legal and Regulatory Analysis Template.pdf" target="_blank" class="tablink">A9 - Legal and Regulatory Analysis</a></h2>
+			<h2><a href="../../docs/A10 - Reliability and Safety Analysis.pdf" target="_blank" class="tablink">A10 - Reliability and Safety Analysis</a></h2>
+			<h2><a href="../../docs/A11 - Ethical and Environmental Analysis.pdf" target="_blank" class="tablink">A11 - Ethical and Environmental Analysis</a></h2>
+			<h2><a href="../../docs/A12_-_User_Manual_.pdf" target="_blank" class="tablink">A12 - User Manual</a></h2>
+			<h2><a href="../../docs/A13 - ABET Senior Design Report - Spring 2024 v2.pdf" target="_blank" class="tablink">A13 - ABET Senior Design Report</a></h2>
+			</div>
+		</div>
+
+		<div id="content">
+			<h2><u>Project Presentations:</u></h2>
+			<div id="document">
+			<h2><a href="../../docs/Midterm Design Presentation.pdf" target="_blank" class="tablink">Team 12 - Midterm Design Review Presentation</a></h2>
+			<h2><a href="../../docs/Final Presentation.pdf" target="_blank" class="tablink">Team 12 - Final Presentation</a></h2>
+			</div>
+		</div>
+
+		<div id="content">
+			<h2><u>Project Schematics and PCB Layout Designs:</u></h2>
+			<div id="document">
+			<h2><a href="../../docs/Current.zip" class="tablink">Team 12 - Schematic and PCB Layout (ZIP)</a></h2>
+			<h2><a href="../../docs/Gbr_File.zip" class="tablink">Team 12 - Gerber File (ZIP)</a></h2>
+			</div>
+		</div>
+
+		<div id="content">
+			<h2><u>Project CAD Design Files:</u></h2>
+			<div id="document">
+			<h2><a href="../../docs/cad files.zip" class="tablink">Team 12 - Project CAD Design Files (ZIP)</a></h2>
+			</div>
+		</div>
+    </div>
+    
+    
+    <div id="Links" class="tabcontent">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/lcTVyiIBquE?si=PnVRxFR0dsRXDbsn" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+        class = "video">
+        </iframe>
+        <br><br>
+
+        <div style="text-align:center"> 
+            <a href="https://github.com/kowals14/microphone-interface?tab=readme-ov-file" target="_blank" class="tablink">
+                Github Repository:https://github.com/kowals14/microphone-interface?tab=readme-ov-file
+            </a>
+            <br><br>
+            <a href="progress3.html" target="_blank" class="tablink">
+                Read my project Journal!
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="bottom"></div>
+
+<script src = "../proj.js" charset="UTF-8"></script>
+</body>
+
+</html> 

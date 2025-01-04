@@ -1,0 +1,149 @@
+<xmp>
+import machine
+from machine import SoftI2C, Pin, sleep, Timer
+import time
+import mpu6050
+import network
+import socket
+import urequests
+import ujson
+from neopixel import NeoPixel
+import sys
+
+def on(t):
+    i2c = machine.SoftI2C(scl=Pin(14), sda=Pin(22))
+    mpu = mpu6050.accel(i2c)
+    vals = {}
+    vals = mpu.get_values()
+    xread = vals["AcX"] - offsetX
+    yread = vals["AcY"] - offsetY
+    zread = vals["AcZ"] - offsetZ
+    if(abs(xread) > 1 or abs(yread) > 1 or abs(zread) > 1):
+        redLED.value(1)
+        print("Motion Detected")
+        print('Current Readings X:', (vals["AcX"] - offsetX), ',Y:',(vals["AcY"] - offsetY), ',Z:',(vals["AcZ"] - offsetZ - 9.8))
+        #Send Notification
+        nurl = 'https://maker.ifttt.com/trigger/motion_detected/json/with/key/dKf6vTonhQb_ruiuO_1Yfk'
+        payload =  {'X Value: ':str(xread), 'Y Value: ':str(yread), 'Z Value: ': str(zread - 9.8)}
+        res = urequests.post(nurl, json=payload)
+        res.close()
+    else:
+        redLED.value(0)
+        
+
+def activate():
+    global offsetX
+    global offsetY
+    global offsetZ
+    global intialized
+    global calibrating
+    cal_list = ['|', '/', '-', '\\']
+    i2c = machine.SoftI2C(scl=Pin(14), sda=Pin(22))
+    mpu = mpu6050.accel(i2c)
+    print("\n-----------------"+"\nAccelerometer Initialized")
+    time.sleep(1)
+    cal_time = time.time() + 10
+    totalX = 0
+    totalY = 0
+    totalZ = 0
+    vals = {}
+    points = 0
+    print("Calibrating Accelerometer")
+    while (time.time() < cal_time):
+        print(cal_list[calibrating], end="\r")
+        if(calibrating == 3):
+            calibrating = 0
+        else:
+            calibrating += 1
+        vals = mpu.get_values()
+        if (time.time() > cal_time - 7):
+            totalX += vals["AcX"]
+            totalY += vals["AcY"]
+            totalZ += vals["AcZ"]
+            points += 1
+    offsetX = totalX / points
+    offsetY = totalY / points
+    offsetZ = totalZ / points
+    print('Accelerometer Calibrated')
+    np[0] = (0,10,0)
+    np.write()
+    tim1.init(period = 5000, mode = Timer.PERIODIC, callback = on)
+    #print('X-Offset: ', offsetX, ', Y-Offset: ', offsetY, ', Z-Offset: ', offsetZ)
+    vals = mpu.get_values()
+    print('Current Readings X:', (vals["AcX"] - offsetX), ',Y:',(vals["AcY"] - offsetY), ',Z:',(vals["AcZ"] - offsetZ - 9.8))
+
+
+def check_sensor_state(t):
+    global initialized
+    global loading
+    int_last_entry = 0
+    load_list = [".", "..", "..."]
+    if(not initialized):
+        print("                                  ", end="\r")
+        print("Checking For Activation" + load_list[loading], end="\r")
+    if(loading == 2):
+        loading = 0
+    else:
+        loading += 1
+    url = 'https://api.thingspeak.com/channels/2369803/fields/1.json?api_key=ZEUWAM3WAHIUMPAI&results=2'
+    state = urequests.get(url) #print(state.text)
+    state_data = state.json() #print(state_data)
+    last_entry = str(state_data['channel']['last_entry_id'])
+    last_element = len(state_data['feeds']) #print(last_element)
+    # print(last_entry)
+    if(last_entry != 'None'):
+        int_last_entry = int(last_entry)
+    if((last_entry != 'None') or (int_last_entry > 0)):
+        last_point = state_data['feeds'][last_element - 1]['field1']
+        #print(last_point)
+        state.close()
+        if(last_point == '1'): #print(initialized)
+            if(not initialized): 
+                activate()
+                initialized = True
+                print("Motion Detector Activated")
+        else:
+            if(initialized):
+                print("Motion Detector Deactivated")
+                initialized = False
+            tim1.deinit()
+            np[0] = (0,0,0)
+            np.write()
+
+
+#---------MAIN---------#
+#Setup NeoPixel
+pwr = Pin(2, Pin.OUT, value = 1)
+pwr.on()
+pin = Pin(0, Pin.OUT)
+np = NeoPixel(pin,8)
+redLED = Pin(13, Pin.OUT)
+
+#Start Timers
+tim0 = Timer(0)
+tim1 = Timer(1)
+
+#Connect to the Internet and print out the local IP address 
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+wlan.scan()
+if not wlan.isconnected():
+    print('connecting to network...')
+    wlan.connect('J iphone', 'ECE40862')
+    while not wlan.isconnected():
+        pass
+print('Connected to', wlan.config('ssid'))
+print('IP Address:', wlan.ifconfig()[0])
+
+global offsetX
+global offsetY
+global offsetZ
+global initialized
+initialized = False
+global loading
+loading = 0
+global calibrating
+calibrating = 0
+
+tim0.init(period = 30000, mode = Timer.PERIODIC, callback = check_sensor_state)
+</xmp>

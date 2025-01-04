@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Joshua Hom Portfolio</title>
+    <link rel="stylesheet" href="../proj.css">
+</head>
+
+<body>
+
+<!-- Navagation Bar-->
+<div class="NAVBAR">
+    <div class="">
+        <div class="NBCOL"><a href="../../index.html"> HOME </a></div>
+        <div class="NBCOL"><a href="../../index.html#about"> ABOUT </a></div>
+        <div class="NBCOL"><a href="../../index.html#projects"> PROJECTS </a></div>
+        <a href="mailto: joshjhom@gmail.com"><img class="NBLOGO NBLsmol" src="../../logo/mail.jpg"></a>
+        <a href="https://github.com/jj-hom" target="_blank"><img class="NBLOGO" src="../../logo/github.jpg"></a>
+        <a href="https://www.linkedin.com/in/joshua-hom/" target="_blank"><img class="NBLOGO" src="../../logo/linkedin.jpg"></a>
+        <a href="miccode.html" target="_blank"><img class="NBLOGO" src="../../logo/code.jpeg" style="margin-left:-4px;"></a>
+        <img class="NBLOGO" src="../../logo/cat.gif" style="margin-right:20px;"></a>
+    </div>
+</div>
+<div class="NBSPACE"></div>
+
+<div class="background">
+    <div class="title">ESP32 Motion Detection System</div>
+    <!-- <img class="timg" src="../../img/MIgroup.JPG"> -->
+    <br><br>
+    <div class="tdesc">This project was a result of a software for embedded systems course at Purdue (ECE437) taught by Professor
+                       Lu Su.  The objective of the course was to learn and develop embedded hardware, Software architectures,
+                       Real-time operating systems, and Software for networked and distributed embedded systems.
+    </div>
+
+    <br><br>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'Gallery')"  id="defaultOpen">Gallery</button>
+        <button class="tablinks" onclick="openCity(event, 'Documents')">Documents</button>
+        <button class="tablinks" onclick="openCity(event, 'Links')">Links</button>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+    
+    <!-- Tab content -->
+    <div id="Gallery" class="tabcontent">
+        <ul class="image-gallery">
+            <li><img class="myImages" id="myImg" src="../../img/esp321.png" 
+                alt="Picture of the embedded system.">
+            </li>
+            <li><img class="myImages" id="myImg" src="../../img/esp323.png" 
+                alt="Block flow diagram of the motion detection system.">
+            </li>
+        </ul>
+    </div>
+    
+
+    <div id="Documents" class="tabcontent">
+		<div id="content">
+			<!-- Homework assignments are stored here -->
+			<h2><u>Project Reports:</u></h2>
+			<h2><a href="motion_detector.html" target="_blank" class="tablink">Code</a></h2>
+            <h2><a href="mpu6050.html" target="_blank" class="tablink">Accelerometer/Gyroscope Library</a></h2>
+            <h2><a href="README.html" target="_blank" class="tablink">Readme</a></h2>
+		</div>
+    </div>
+    
+    
+    <div id="Links" class="tabcontent">
+        <div class="video">Demonstration Video by me:</div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jjYxpHiHcgQ?si=2Xn-0zCfxrTqWT8o" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+        class="video"
+        ></iframe>
+        <br><br>
+    </div>
+
+</div>
+
+<div class="bottom"></div>
+
+<script src = "../proj.js" charset="UTF-8"></script>
+</body>
+
+</html> 

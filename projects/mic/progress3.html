@@ -1,0 +1,1223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+This is an example weekly progress report document that team members can use to report their individual progress 
+of their ECE477 senior design projects. Weekly progress reports are expected to follow the general guidelines
+presented in the "Progress Report Policy" document, posted on Brightspace.  
+
+Please create 4 copies of this example, renaming each copy to <PurdueID>.html, where <PurdueID> corresponds to
+the Purdue ITAP Career Account ID given by Purdue to each individual team member. If you have any questions,
+contact course staff.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!--Reconfigurable base tag; used to modify the site root location for root-relative links-->
+<!--<base href="https://engineering.purdue.edu/ece477/StudentWebTemplate/" />-->
+    <!-- <base href="https://engineering.purdue.edu/477grp12/" /> Replace the N with your team number -->
+
+<!--Content-->
+<title>ECE477 Course Documents</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="author" content="George Hadley">
+<meta name = "format-detection" content = "telephone=no" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<!--CSS-->
+<link rel="stylesheet" href="css/default.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/content.css">
+<!--[if IE 6]>
+<link href="default_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+</head>
+<body>
+<div id="wrapper_site">
+    <div id="wrapper_page">
+	<!-- Instantiate global site header.-->
+	<div id="header"></div>
+		<!-- Instantiate site global navigation bar.-->
+		<div id="menu"></div>
+	
+		<!-- Instantiate a page banner image. Page banner images should be 1100x350px and should be located within the local
+			img folder located at this directory level. -->
+		<div id="banner">
+			<!-- <img src="Files/img/BannerImgExample.jpg"></img> -->
+		</div>
+	
+		<!-- Instantiate "tools" needed for a page. Tools are premade functional blocks that can be used to build a page,
+			and include things such as a file lister (for listing out homework assignments or tutorials)
+		-->
+		<div id="content">
+            <h2>Progress Report/Engineering Project Journal for Joshua Hom</h2>
+			<!------------------------------------------------>
+
+			<!------------------------------------------------>
+			<br>----------------------------------------------------------------------------------------Week 15:
+			---------------------------------------------------------------------------------------<br>
+			<!------------------------------------------------>
+
+			<br>Date:</b> 4/17/2024
+			<br>Time:</b> 11:00am
+            <br>Duration:</b> 4.00 hours
+			<br><br>
+			<b>Audio Effects review and User Testing:</b> In this session, I met up and Jakub to review the DSP and do some fine tuning.  He mentioned that he was able to get 
+														  the debouncing to work better by increasing the confidence level. We then ran into a weirdness with the LCD not displaying
+														  correctly when he added some unrelated code. He was able to find a bug in the STM library relating the LCD screen.  After that we limit tested,
+														  the controls by rapidly using the controls simultaneously.  Luckily, we did not run into any problems.
+
+			<br>__________________________________________________________
+			<br>Date:</b> 4/16/2024
+			<br>Time:</b> 11:00am
+            <br>Duration:</b> 2.80 hours
+			<br><br>
+			<b>3D Packaging:</b>  In this session, I picked up our final 3D print from the ECE shop and met up with Liam to finalize it.  It had support 
+								  structures on the control side so we needed to smooth out the left over bits.  We used a dremmel for this and one thing
+								  we didnt account for was that the dremmel would make anything it operates on hot.  This resulted in the case melting a
+								  bit.  The case was also white, so Liam planned to take it home to spray paint it black and fix it up a bit.  We also found
+								  screws and standoffs to secure our PCB to the backplate.  This completes the housing for our project.
+
+									</p><img src="img - member3/Week15/finalprod.jpg" width="500" height="400"></img></p>
+								
+								 Jakub was also in the lab and we reiewed some issues with the software.  One of which was that the debouncing was not yet 
+								 put to use.  I reviewed it with him and we were able to get the buttons to work somewhat smoothly.
+
+			<br>__________________________________________________________
+			<br>Date:</b> 4/15/2024
+			<br>Time:</b> 11:00am
+            <br>Duration:</b> 2.00 hours
+			<br><br>
+			<b>Distortion Effect:</b> In this session, I met up with Jakub to review the audio effects.  He had to restucture how the DSP was calculated and
+									  made them more organized. He also noticed an error in my distortion code.  Since the thresholds are based off of the sample,
+									  they would never be reduced.  I wrote this to somehow find a way to control the upper and lower thresholds with only one 
+									  parameter. In theory, you would want to control the upper, lower, and noise thresholds and gains. This would require six 
+									  controls.  However Jakub came up with the idea to change the control parameters to preamp, post-gain, and mix. This way
+									  the user still has control over the distortion.  We would later decide if we would want to implement a six control option
+									  utlizing the touch screen feature to swtich in between.  We reviewed some other issues with his code.  After this, I wrote a 
+									  another version of the distortion effect with the new plan in mind.
+
+									</p><img src="img - member3/Week15/newdistort.png" width="500" height="300"></img></p>
+
+			<!------------------------------------------------>
+			<br>----------------------------------------------------------------------------------------Week 14:
+			---------------------------------------------------------------------------------------<br>
+			<!------------------------------------------------>
+
+			<br>Date:</b> 4/10/2024
+			<br>Time:</b> 11:00am
+            <br>Duration:</b> 4.15 hours
+			<br><br>
+			<b>Team Meeting and Distortion Effect:</b>  In this session, I met up with the team to work on the project.  Liam brought up his observation of the soldering on the
+														codec.  He noticed that there wasn't a connection on the side of the chip even though it was QFN.  He planned to reflow it
+														to see if the codec wasn't receiving the signals.  After that, the codec worked, this checks off all of our hardware and we 
+														can now focus on the software.  I took up the responsibility to write the distortion effect.  Since Jakub already had a 
+														structure written for the equalization, so implentation was straightforward. For distortion, we are basically amplifying the
+														recieved signal and cutting of the peaks at a certain threshold.
+
+														</p><img src="img - member3/Week14/simple.png" width="600" height="200"></img></p>
+
+														This is a basic representation of what is being implemented. In our design, the process is cut into multiple steps to
+														try to obtain seamless processing.  We would have separate functions to compute the coefficients, put them in a buffer, and
+														compute the final sample.  We decided that our knobs can control the "higher" and "lower" threshold difference, higher gain,
+														and lower gain.  This is the ending result.
+														
+														</p><img src="img - member3/Week14/final.png" width="600" height="600"></img></p>
+
+														In the next session, I will need to test this effect and see how it behaves.
+
+
+			<br>__________________________________________________________
+			<br>Date:</b> 4/06/2024
+			<br>Time:</b> 11:00am
+            <br>Duration:</b> 3.15 hours
+			<br><br>
+			<b>Codec Circuit Debugging:</b>  In this session, I met up with Liam and Jakub to try and get the codec and LCD cirucit to work.  We observed that the MCU was sending
+											 signals to the codec, but the codec was not intializing.  Then we checked the important connections for the codec chip but weren't able
+											 to make any conclusions.  Jakub wasn't able to get the LCD working on the PCB even though he was able to get it working on the prototype.
+											 He discovered that the I2C lines do not work when they have the resistors we put for ESD protection.  After replacing those resistors with
+											 0 ohms, the LCD was able to work.  At the end of the session, I was able to put in a 3D print request for an updated version of the case and
+											 buttons.
+
+			<!------------------------------------------------>
+			<br>----------------------------------------------------------------------------------------Week 13:
+			---------------------------------------------------------------------------------------<br>
+			<!------------------------------------------------>
+
+			<br>Date:</b> 4/04/2024
+			<br>Time:</b> 9:00am
+            <br>Duration:</b> 3.35 hours
+			<br><br>
+			<b>PC Assembly and Controls checkoff:</b>  In this session, I worked with Liam to solder on the codec circuit.  Before that, I demonstrated the current timer problem
+													  to possibly grab some ideas from him. Fortunately, for some odd reason, the timer was working.  However, I noticed that I had
+													  switched the channels A and B when designing the PCB.  This caused the rotary encoder to behave opposite of the other two, 
+													  decrementing the counter when turned clockwise and vice versa.  Nonetheless the code was able to be executed to demonstrate the 
+													  PSDR.  I will go over some of the code that I wrote.
+
+													</p><img src="img - member3/Week13/global.png" width="600" height="200"></img></p>
+
+													These are the global variables in main.c.  Select signifies which instance we are choosing, whether it would be an LED, timer(rotary encoder),
+													 or DSP effect.  tDelay is an array of values that are derived from the each of the counters.  This would symbolize our 
+													 parameters for our DSP. ConfLvl stands for confidence level.  It holds the value of the current "confidence" for each button.
+													 ConfT is the confidence threshold.  This variable describes how much or little deboucing we have.<br><br>
+													
+													</p><img src="img - member3/Week13/startup.png" width="400" height="300"></img></p>
+
+													 These statements intialize the timers that are active during the code execution.  These are important, otherwise they 
+													 will not start. <br><br>
+
+													</p><img src="img - member3/Week13/start.png" width="400" height="200"></img></p>
+
+													This startup code simply tests the LEDs in order to check if they work.</br><br>
+
+													</p><img src="img - member3/Week13/while.png" width="500" height="400"></img></p>
+
+													This is the while loop.  It will check which LED is selected, update the value from the counter, and sleep based on that 
+													time to implement LED blinking.  </br><br>
+
+												    </p><img src="img - member3/Week13/select.png" width="600" height="200"></img></p>
+
+													This is the user function select.  Based on which button is pressed, left or right, it will switch the select value to 
+													according to that direction.  Logic is implemented so that the reload value is 3.</br>
+
+												    </p><img src="img - member3/Week13/callback.png" width="600" height="400"></img></p>
+
+													This the timer callback function which is also a user defined function.  This function is based on timer 14.  When the tim14
+													counter reaches the threshold, it will call this function. This is a method of software debouncing.  During this function call,
+													it will read both the buttons to see if they're pressed. Logic is implemented so that the buttons have to be pressed until the
+													confidence level reaches the confidence threshold. There is a while loop to wait for the button to be released so that 
+													crement_select is only called once.
+
+			<br>__________________________________________________________
+			<br>Date:</b> 4/03/2024
+			<br>Time:</b> 11:00am
+            <br>Duration:</b> 5.00 hours
+			<br><br>
+			<b>Team Meeting and PC Testing:</b> In this session, I tried to reset the MCU chip so we can load code onto it.  Luckily, Jakub was able to do it and taught me 
+												how to use STM Utility.  
+
+											</p><img src="img - member3/Week13/utility.png" width="600" height="400"></img></p>
+											First open STMUtility.<br><br>
+											
+											</p><img src="img - member3/Week13/connect.png" width="200" height="200"></img></p>
+											Then while holding the reset button on the board, press this connect symbol.  This will allow Utility to connect to the board and 
+											perform various options.<br><br>
+
+											</p><img src="img - member3/Week13/erase.png" width="200" height="200"></img></p>
+											For this case, erase the chip and wait for it to finish.<br><br>
+
+											This was a success and through multiple attempts, I was able to deduce why the MCU was getting stuck.  When creating the
+											code to test the controls, I had tested on the nucleo board first.  This meant that I had pins set on the .ioc that would
+											be connected to other *unrelated* traces / pins on our PCB.  Clearing this pins before loading code onto our project solved
+											this problem. <br><br>
+
+											The buttons were able to be tested, however, the rotary encoders seemed to be not functional.  I verified that it was outputting
+											the correct signals by measuring the waves on the oscilloscope.  That meant that it had to be something with the software setup
+											and/or code of the timers.  For some reason, it could not detect the signals and update its counter. I verified the pins and timers
+											multiple times.  I then asked Schubo to see his code and ioc file since he was able to prototype a rotary encoder to use for the 
+											developing the software.  It was then I realized I had missed a statement in my code.
+
+											</p><img src="img - member3/Week13/timfix.png" width="300" height="50"></img></p>
+											This line will start the counter for each timer.  Which explains why the counter was not updating even though the signals were being 
+											sent properly.<br><br>
+
+											Even though this fixed the timers, one of them was not functioning correctly and one of the LEDs needed to be replaced.  So I could not
+											get the check off for the controls. <br><br>
+						
+											In the meeting, we discussed our timeline for the project.  We planned to finish all the soldering hopefully by the end of this week. 
+											This meant we would have 2 weeks to develop our software and debug before our due date.  In the next session, I would need to try to
+											fix the broken timer and hopefully get the checkoff.
+
+
+
+
+			<br>__________________________________________________________
+			<br>Date:</b> 4/02/2024
+			<br>Time:</b> 9:00am
+            <br>Duration:</b> 3.00 hours
+			<br><br>
+			<b>PC Assembly and Testing:</b>  In this session, I met up with Liam so that I could assist him with soldering on the controls.  In parallel, I also started
+											 to work on writing test code to verify that the buttons worked. 
+
+											</p><img src="img - member3/Week13/buttontest.png" width="300" height="100"></img></p>
+											This code simple reads the GPIO pin of each button and will toggle the pin if its pressed. <br><br>
+
+											 When he finished soldering them on, I tried to load my code 
+											 onto the MCU, however it behaved in an unexpected manner and the STMCubeIDE debugger wasn't able to detect it.  We spent some
+											 time visually inspecting for a short or a soldering error.  However, through continuity testing and  using the nucleo board, we
+											 concluded that the board was physically fine. I noticed that the LED on the board was currently on, however in my code I set it to 
+											 blink occasionally.  This led me to my original theory was that the MCU was stuck looping on some code inhibiting it to respond 
+											 to respond to the CUBE debugger.
+
+											</p><img src="img - member3/Week13/connectprob.png" width="300" height="200"></img></p>
+											This was the end statements when trying to load code on to the MCU.<br><br>
+
+											 This led me to research possible reasons why this occured and some solutions.  I was able to 
+											 discover a program called STUtility which allows you to erase the flash memory on an MCU.  This was going to be my goal for the
+											 next session.
+
+			<!------------------------------------------------>
+			<br>----------------------------------------------------------------------------------------Week 12:
+			---------------------------------------------------------------------------------------<br>
+			<!------------------------------------------------>
+			<br>Date:</b> 3/28/2024
+			<br>Time:</b> 3:00pm
+            <br>Duration:</b> 1.00 hour
+			<br><br>
+			<b>Packaging Assesment:</b>  In this session, I was able to pick up the case from the ECE shop.  It had some support stuctures which I had to take off
+										using forceps.  And then I started to measure and fit our project with what we had.  The touch screen was able to be flush
+										with the screen hole when put in which meant that it was a good size.  However, I noticed that the space inbetween the screen
+										and the PCB board is very minimal. This is crucial because our program header pins are tall.  We need to make our case tall so
+										that they can both be placed.  For the controls, the metal part of the rotary encoder would stick out, so I need to make the 
+										knobs taller.  However I cannot get an exact measure meant until we can fit the PCB in.
+
+										</p><img src="img - member3/Week12/case1.jpg" width="300" height="200"></img>
+										<img src="img - member3/Week12/case2.jpg" width="200" height="300"></img></p>
+
+			<br>__________________________________________________________
+			<br>Date:</b> 3/27/2024
+			<br>Time:</b> 11:00am
+            <br>Duration:</b> 4.00 hours
+			<br><br>
+			<b>Team Meeting and PC Assembly:</b>  Before going to lab, I picked up the 3d printed controls from the ECE shop.  
+												  The buttons weren't able to fit onto our buttons.  Liam suggested that I should just make a square hole
+												  on the bottom instead of trying to implement the locking mechanism.  This is because we can just glue the button when 
+												  worrying about it staying on.  During the session, we discussed how everything was going with the project.  Me and Liam
+												  decided to work on the controls for the PCB so that we could get a PSDR checkoff.  But we also noted how important the codec
+												  circuit was and how long it would take.  In the rest of the session, I worked on learning, Autodesk Fusion 360 to edit the 3D
+												  models.  One thing that I learned was how to convert an stl object to a mesh object.
+
+												</p><img src="img - member3/Week12/import.png" width="400" height="300">
+												<img src="img - member3/Week12/convert.png" width="400" height="300"></img></p>
+
+												</p><img src="img - member3/Week12/setting.png" width="300" height="200">
+												<img src="img - member3/Week12/result.png" width="300" height="200"></img></p>
+
+												  First import the .stl object and then convert it to a mesh brep like above.  When done, you should be able to select and edit 
+												  each individual geometry.  This allows the object to be edited, I need to 
+												  learn how to resize holes, add, and group objects.  However there are so many tools, I will need to put more time in later.  
+												  I also put in an 3D print order for the case.
+
+												  Meanwhile, Liam soldered on the buttons to our PCB board.  I then loaded code onto the MCU to test if they worked.  The MCU
+												  is able to detect the button signals however when testing, I noticed that some of the GPIO output LED's weren't working. We
+												  would need to figure this out later.
+
+			<br>__________________________________________________________
+			<br>Date:</b> 3/26/2024
+			<br>Time:</b> 9:00am
+            <br>Duration:</b> 3.00 hours
+			<br><br>
+			<b>PCB Asssembly and Test:</b>	In this session, I met up with Liam again to try to test code on the MCU. However, when the LED's where soldered on,
+											the code didn't seem to execute.  Our first though was that we had assembled the MCU incorrectly somewhere. When doing
+											continutiy tests we noticed that there was a resistance between power and ground.  This led us to believe that there was
+											a short somewhere.  Then Liam went to solder a the power circuit, MCU, and flywire adjustments on a new board.  After that 
+											was done, we still observed some resistance.  It was after doing the same tests on an F0 board, we concluded that the voltage
+											regulators (LDO) have some internal resistance.  We then ruled out a soldering issue and I tried to figure out if it was
+											something in the software.  Later, Jakub suggested that I should create a new project in CubeIde.  And one thing that I noticed
+											was that when creating a new project, you can choose either a board or a chip.  It was then that I realized that I had been trying
+											to program our PCB with the F7 Nucleo board project and not the chip itself.
+
+										</p><img src="img - member3/Week12/cubechip.png" width="600" height="400"></img></p>
+
+											Creating a new project with the chip worked and we were able to successfully load code onto our PCB.  
+
+										</p><img src="img - member3/Week12/loadedcode.jpg" width="300" height="200"></img></p>
+
+			<br>__________________________________________________________
+			<br>Date:</b> 3/25/2024
+			<br>Time:</b> 10:30am
+            <br>Duration: 3.00 hours</b> 
+			<br><br>
+			<b>3D Print Packaging:</b>  Before going into lab I visited the ECE shop to figure out the 3D printing request process.  I was given a link to a google
+										forms to request 3D prints.  I also discovered that they use the 3D slicer software Cura which would check 3d files (.stl)
+										before converting it to G-code which is what is processed during the print.
+										In this session, I started the 3D printing process.  I first tried to get measurements of the buttons and the rotary encoders
+										using Liam's calipers.  I was able to get these measurements and wrote them down:
+
+									</p><img src="img - member3/Week12/measurements.jpg" width="600" height="400"></img></p>
+
+										 Then, I discovered a website called thingiverse.com which has pubicly uploaded 3d print models.  I was able to find already made
+										 models for the knobs and buttons.  I then went on the TinkerCad website to import and measure the models.  I used this website 
+										 because I heard it was easy to use and make adjustments to models.  It also has a measurement tool which I used to compare the 
+										 models and the measurements I made earlier.  Since they seemed to large, I was able to make the holes of the knobs smaller by 
+										 creating a 3d fill model and resizing the knob.  I also did the same with the buttons.  This was my result:
+
+										</p><img src="img - member3/Week12/tinkercad.png" width="700" height="400"></img></p>
+
+										I went ahead and made an order of the controls with the original and modified sizes since I was unsure about the tolerances of the
+										3d printing and measurements.
+
+			<br>__________________________________________________________
+			<br>Date:</b> 3/24/2024
+			<br>Time:</b> 11:00am
+			<br>Duration: 1.50 hours</b> 
+			<br><br>
+			<b>PCB Assembly:</b>  In this session, I met up with Liam to try and solder the MCU on our PCB.  I assisted him by telling him the values of each part.
+								  When he was done with that, we tried to setup the programming header to see if we can load code onto the MCU.  It was then that we
+								  noticed that we had connected the wrong pins to our programming header.  We originally had SWDIO and SCLK connected to PB13 and PB14,
+								  when we should in fact have it connect to PA13 and PA14.  Liam's remedy to this was to flywire the correct MCU pins to our board.  
+
+								</p><img src="img - member3/Week12/pcb.jpg" width="700" height="400"></img></p>
+
+								With this, we were able to connect the ST-Link to our MCU and the CUBEIde was able to detect our MCU.  In the next session, we would try to
+								solder on our test LED's to load code onto it.
+
+
+			<!------------------------------------------------>
+			<br>----------------------------------------------------------------------------------------Week 10/11:
+			---------------------------------------------------------------------------------------<br>
+			<!------------------------------------------------>
+			<br>Date:</b> 3/22/2024
+			<br>Time:</b> 1:30pm
+            <br>Duration: 1.50 hours</b> 
+			<br><br>
+			<b>PCB Assembly and Testing:</b>  In this session, I worked with Liam to help him verify the SMD components when assmebling the PCB.  He pointed out an error
+											  I made when designing the PCB.  The orientation of the switch was wrong and I had connected the two ends of the switch to
+											  the same line.  He was able to get around this problem by wiring one end to the other side diagonally since I left the other
+											  side open.  This is an example.
+
+											</p><img src="img - member3/Week10/switch.png" width="700" height="400"></img></p>
+
+											  Liam was able to solder most of the important capacitors for the F7 chip in this session and can probably start to test it in
+											  the next session.  For the rest of the session, I was working on code that we can used to test the debugging LED's and F7 Chip
+											  when we finished soldering it.
+
+											</p><img src="img - member3/Week10/code.png" width="700" height="400"></img></p>
+
+											  The code just blinks an LED that we have on the PCB.
+
+			<br>__________________________________________________________
+			<br>Date:</b> 3/21/2024
+			<br>Time:</b> 9:00am
+            <br>Duration:</b> 2.10 hours
+			<br><br>
+			<b>PCB Asssembly and A9:</b>  In this session, I met up with Liam to start soldering the PCB board.  We first started on the power circuit.  I verified
+										  the SMD capacitors while he soldered them on.  No huge complications arised.  We were able to solder them, apply continuity 
+										  tests on each component, and get our power LED to turn on. For the rest of the time, I was researching patents for the assignment.
+
+										  I found three patents that described similar function and or elements.
+
+										 </p><img src="img - member3/Week10/first.png" width="700" height="400"></img></p>
+
+										 This patent claims of a device that can recieve an audio-encoded signal from a sound device through a wired or wireless connection.
+										 This device will also apply DSP and output the resulting signal through an audio speaker of its own.  It will also have its own power
+										 source.  Since it has these key differences, our device isn't substantially the same.
+
+										 </p><img src="img - member3/Week10/pedal.png" width="700" height="400"></img>
+										 <img src="img - member3/Week10/pedalchart.png" width="700" height="400"></img></p>
+
+										 This patent makes claims of a audio foot pedal that applies DSP on an input and output signal. It also composes of knobs and buttons to
+										 act as a user interface.  However the a big portion of the claim describes a multi-state footswitch which implies an operating of the foot.
+										 It also does not include an LCD screen.  This makes our device and this patent very different.
+
+						                 </p><img src="img - member3/Week10/2pass.png" width="350" height="400"></img>
+										 <img src="img - member3/Week10/2passhardware.png" width="350" height="400"></img></p>
+
+										 This patent describes an audio processing method and electronic device for supporting it.  It describes an input unit for recieving a signal, 
+										 an audio processing unit for applying DSP, a touchscreen display, and a speaker.  It also describes a method of apply the digital signal processing
+										 through a two pass process.  Our design has touchscreen but also has knobs and buttons as an interface.  Our method for applying DSP also won't 
+										 specifically function as described in the patent so the two ideas differ.
+
+			<br>__________________________________________________________
+			<br>Date:</b> 3/20/2024
+			<br>Time:</b> 12:00pm
+            <br>Duration:</b> 4.25 hours
+			<br><br>
+			<b>Team Meeting and A9:</b> In this session, I met up with the team and discussed the next steps of the project.  We got our PCB's at the end of ManLab
+										so we weren't able to start verification and assembly.  The next step for me was to work with Liam on assembling the PCB
+										and to create 3D printing files for the knobs and buttons.  This week I was also in charge of doing the A9 Patent and Regulatory
+										analysis for our project.  I did some research on FCC and RoHS on the remaining time here.
+
+										I first research if our device was RoHS compliant which means that it can't contain a certain amount of a certain material.
+										This was when I started to see if any of our components had any of these materials.  I first checked our PCB since that would
+										be the biggest contributor in our design.  And on the JLC website, it states that their PCB's are RoHS compliant.  We also
+										plan to use Lead-Free solder.  And for the components most of them state that they are RoHS compliant in their datasheets. 
+										For our packaging, we were planning to use 3D printing material which is also RoHS compliant. I also saw that one method to verify
+										this is to use an x-ray that can check for certain materials. 
+
+										<p><img src="img - member3/Week10/rohs.png" width="400" height="200"></img>
+											<img src="img - member3/Week10/rohsrules.png" width="350" height="200"></img></p>
+
+										Then I researched the FCC regulations.  Under the FCC regulations, our device would classify as an unintentional radiator since it
+										is a digital logic device that operates under high clock speeds.  In order for these devices to be FCC certifified, the amount of RF
+										noise it emits at a certain distance would have to be maintained.  There was a chart on the offical FCC website containing these details.
+										The statue of limitation was our F7 chip which had a max clock speed of 216 MHz.
+
+									</p><img src="img - member3/Week10/fcc.png" width="400" height="200"></img>
+										<img src="img - member3/Week10/fccchart.png" width="300" height="200"></img></p>
+										
+
+
+
+			<br><br>
+			<!------------------------------------------------>
+			<br>-------------------------------------------------------------------------------------------Week 9:
+			------------------------------------------------------------------------------------------<br>
+			<!------------------------------------------------>
+			<br>Date:</b> 3/06/2024
+			<br>Time:</b> 12:30pm
+            <br>Duration:</b> 3.00 hours
+			<br><br>
+			<b>PCB Verification:</b> In this session, I met up with the team to do footprint verification and gather the parts that may have already been in the lab.
+									 I used KiCad to create a bill of materials and make a list of the 0805 capacitors and resistors I needed.  I noticed that the 
+									 lab did not have some parts and I noted that we had to order them ourselves.
+
+									 <p><img src="img - member3/Week9/billofm.png" width="700" height="400"></img></p>
+
+									 Liam had printed out the layout and was doing the footprint verifcation.  He had some notes to change for the footprint.  The FPC
+									 connector should be flipped upside down due to the orientation of the cable. There also should be ground test points to add.  I also
+									 made some changes to the layout after Shubo made some changes. I just added infill to the signal planes. I also added a header for the
+									 extra GPIO inputs.  I also added exclusion zones to the external oscillators. This is the result after.
+
+									 <p><img src="img - member3/Week9/result.png" width="700" height="400"></img></p>
+
+			<br>__________________________________________________________
+			<br>Date:</b> 3/03/2024
+			<br>Time:</b> 12:00pm
+            <br>Duration:</b> 3.15 hours
+			<br><br>
+			<b>Layout Progress:</b>  In this session, I worked on finishing up the pcb layout. The routing was finished and most of the feedback from Joe and Dr.Walter
+									 was implemented.  I switched the layers so that the signals are on the top and bottom and the power and ground are in the middle.
+									 I also replaced the small 0201 diodes with a TVS diode array.  They can be seen here.
+
+									 <p><img src="img - member3/Week9/TVSdiode.png" width="700" height="400"></img></p>
+
+			<br>__________________________________________________________
+			<br>Date:</b> 3/02/2024
+			<br>Time:</b> 12:00pm
+            <br>Duration:</b> 4.25 hours
+			<br><br>
+			<b>Layout Reroute:</b> In this session, I focused on rerouting the pcb layout.  I put the decoupling capacitors on the bottom near the MCU
+								   and the codec.  I also had to move the LCD FPC connector to the top of the board and the reset switch to the bottom left.
+			<br><br>
+
+			<!------------------------------------------------>
+			<br>-------------------------------------------------------------------------------------------Week 8:
+			------------------------------------------------------------------------------------------<br>
+			<!------------------------------------------------>
+
+			<br>Date:</b> 2/29/2024
+			<br>Time:</b> 3:00pm
+            <br>Duration:</b> 2.00 hours
+			<br><br>
+			<b>Layout Adjustments:</b>  In this session, I wokred on the layout more based off the feedback that was given to us yesterday.  I firstly wanted to 
+									fix the external crystal problem so I started to place the decoupling capacitors in the back so that theres more room. 
+									I did this for both the MCU and the codec.  I also moved the 18 pin FPC connector to the top and the reset switch to the
+									left. One thing I will have to find out next week is the order of the FPC connector. No datasheets can be found with that
+									information so me and Liam plan to use the DMM contiunity test to find it out on the breakout board we have for it.  This 
+									my result at the end.  It still needs more work.
+
+									<p><img src="img - member3/Week8/adjust.png" width="700" height="400"></img></p>
+			
+			<br>__________________________________________________________
+			<br>Date:</b> 2/28/2024
+			<br>Time:</b> 11:00am
+            <br>Duration:</b> 1.50 hours
+			<br><br>
+			<b>Presentation:</b>  In this session, we made some last minute adjustments to the layout and rehearsed our presentation.  After our presentation,
+							  Joe and Dr. Walter pointed out major problems with our layout.  First of all, our crystals should be isolated and each side 
+							  should be equal length for the connection.  We also should reorder our layers. We should have the two signal planes on the top
+							  and bottom with the power and ground in between them. I also forgot we can place the decoupling capacitors on the back to make 
+							  more room. Joe pointed out that we should put a plane underneath the 3.3v pad on the USB port to auxilliarate heat disspation.
+							  There was also a note that we had 0201 diodes in our layout and those are simply too small to hand solder.  Joe and Dr. Walter 
+							  showed us some we could use.  There were also some other notes that I couldn't quite remember but were written in the feedback.
+
+			<br>__________________________________________________________
+			<br>Date:</b> 2/27/2024
+			<br>Time:</b> 12:00pm
+			<br>Duration:</b> 4.00 hours
+			<br><br>
+			<b>Slides and Layout Adjustments:</b>  In this session, Liam had some feedback for the layout so the team meetup to fix them.  I had the wrong footprints
+												for some of the capacitors near the audio jacks, so I replaced them with the right ones. We also have forgot to 
+												separate the digital and analog ground planes for the codec circuit, so I added those.
+
+												We also worked on the slides for our presentation here.
+			
+			<br>__________________________________________________________
+			<br>Date:</b> 2/25/2024
+			<br>Time:</b> 12:00am
+            <br>Duration:</b> 5.00 hours
+			<br><br>
+			<b>Layout Rough Draft:</b>  In this session, I continued to work on the layout for our design.  I was now focused on the codec circuit and first placed
+									the decoupling capacitors and the external oscillator just like yesterday.  Then I proceeded to connect the other parts and 
+									connect the signals to the MCU. I wasn't exatcly sure how to route the USB ports and other power components, so I handed off
+									the PCB layout to Shubo to work on that. This was my result after today.
+
+									<p><img src="img - member3/Week8/CODEC.png" width="400" height="400"></img><p></p>
+									  
+
+			<br>__________________________________________________________
+			<br>Date:</b> 2/24/2024
+			<br>Time:</b> 12:00pm
+			<br>Duration:</b> 6.00 hours
+			<br><br>
+			<b>Starting Layout:</b>  In this session, I started to work on the PCB layout now that the schematics have been given feedback. Firstly, I checked
+								 to make sure I had all the right footprints. When you first update PCB from layout in KiCad, it will try to compile all the 
+								 footprints in the layout application and will tell you if any are missing or if any pads aren't connected like in the schematic.
+
+								 <p><img src="img - member3/Week8/updatepcb.png" width="200" height="50"></img>
+									<img src="img - member3/Week8/footprinterrors.png" width="400" height="300"></img>
+								 </p>
+
+								 After doing this, I started to organize the parts into their respective section.  As a start, I based the sections off the 
+								 models we had in the mechanical overview.  I will put the MCU in the middle, the controls on the bottoms, the codec circuit
+								 on the right so that the jacks could be above it on the top, and finally the usb port on the top left.
+
+								 When this was done, I first placed and routed the decoupling capacitors.  I tried to place these as close as possible to the 
+								 MCU. Then I placed the external crystal as close as possible.  Finally, I tried to trace and connect the controls.	This was the 
+								 result in the end.
+
+								 <p><img src="img - member3/Week8/MCU.png" width="300" height="300"></img>
+									<img src="img - member3/Week8/Controls.png" width="500" height="200"></img>
+								 </p>
+
+
+			<!------------------------------------------------>
+			<br>-------------------------------------------------------------------------------------------Week 7:
+			------------------------------------------------------------------------------------------<br>
+			<!------------------------------------------------>
+
+			<br>Date:</b> 2/22/2024
+			<br>Time:</b> 9:00am
+            <br>Duration:</b> 4.00 hours
+			<br><br>
+			<b>Finishing Schematic and Layout start:</b> In this session, I implemented the changes from the feedback we got in ManLab.  First I got rid of the spaghetti
+														 wiring between the circuits and the microcontroller and added labels instead.  I also realized that the chip we
+														 were using was still from the F7 discoverery board which we initially used.  After switching to the correct chip, I
+														 looked into the miscellaneous pins from the F7 Nucleo schematics.
+
+														 The left image is what is seen on the STMF7ZG schematics, the right is how I implemented it.
+
+														 <p><img src="img - member3/Week7/VCAP F7.png" width="200" height="50"></img>
+															<img src="img - member3/Week7/vcap.png" width="100" height="50"></img>
+														 </p>
+
+														 I set the VCAP pins to ground through ceramic capacitors. The other connections from the official schematic are 
+														 separated by solder bridges and would only need to be implemented if we were using those pins as such.
+
+														 <p><img src="img - member3/Week7/pdron.png" width="200" height="50"></img>
+															<img src="img - member3/Week7/pdron2.png" width="100" height="50"></img>
+														</p>
+
+														 The PDRON pin is also not originally connected so I will keep no connection on it.
+
+														 <p><img src="img - member3/Week7/VREF+.png" width="200" height="50"></img>
+															<img src="img - member3/Week7/vref.png" width="100" height="50"></img>
+														</p>
+
+														 VREF+ is also connected to VDDA.
+
+														 <p><img src="img - member3/Week7/18pin.png" width="400" height="400"></img><p></p>
+
+														I have also changed the LCD circuit to the 18 pin connector.  We have yet to find one from a vendor though.
+
+														After these changes, I have most of the schematic complete and footprints assinged, so I fixed some ERC errors and
+														started the pcb layout design.  My first step was to compile all the parts and organize them into their respective
+														sections.
+
+														<p><img src="img - member3/Week7/layout.png" width="800" height="400"></img><p></p>
+
+														Here I planned to separate the sections into analog, power, and controls.  On the top left, we will have the usb connection
+														for power.  There will also be a reset button. On the top right, we have the audio jacks and the codec circuit on the right side.
+														On the bottom we will have the controls and the MCU in the middle.
+
+														I have only organized the parts into their respective sections for now. Next, I will need to add traces and other details related 
+														to the layout.
+
+			<br>__________________________________________________________
+			<br>Date:</b> 2/21/2024
+			<br>Time:</b> 11:00am
+            <br>Duration:</b> 4.00 hours
+			<br><br>
+			<b>Schematic Integration and Review:</b> In this session, I merged the changes with me and Shubo's schematics.  This was the end result.
+													
+													 <p><img src="img - member3/Week7/integratedfull.png" width="800" height="400"></img><p></p>
+
+													 I was then focused on assigning the correct footprints to each part.  I searched up each part in our bill of materials and
+													 downloaded their libraries.  
+
+													 During ManLab, Joe and Professor Walter gave us feedback on our schematics. The most important piece was that we did not need
+													 to implement the LCD screen circuit and can use the breakout board itself in our design. This meant that for the schematics, 
+													 we would only need to put the 18 pin FPC connector on our board and connect it to our microcontroller accordingly. I will 
+													 implement this changes in the next session.
+
+													 For the rest of the time, I worked with the rest of the team to find our parts and order them. This is important so that I can 
+													 get their footprints and make progress in the PCB layout. We also discussed our budget and we are currently well within range.
+
+			<br>__________________________________________________________
+			<br>Date:</b> 2/18/2024
+			<br>Time:</b> 12:00pm
+            <br>Duration:</b> 3.00 hours`
+			<br><br>
+			<b>Screen Schematic Progress:</b> In this session, I researched the LCD breakout schematic more to figure out the connections.  It was after looking into the
+											  datasheet on the screen itself, I realized that the big rectangle that all the connections were going to was the screen.
+											  What I needed to do was add a 50 pin FPC connector and lead all the traces for the LCD circuit to it. 
+
+											  <p><img src="img - member3/Week7/LCDscreen.png" width="400" height="400"></img><p></p>
+
+											  The circuit has two 74HC245 chips which is a bidirectional octal bus.  This chip has an A side and a B side.  You could have
+											  data flow from A->B or B->A depending on what is set on the direction pin. In this circuit, the direction of these chips are 
+											  static.  There is also an LM809 chip, which will monitor the VCC voltage and assert the reset signal if it should drop below
+											  the threshold.  There are also a few BSS138 transistors. I have added LCD_DATA0-8 although we don't use it. I was wondering if
+											  grounding them would send false data to the screen and if I should keep those connections floating.  I have also added some 
+											  debugging LEDS on the signals coming from the microcontroller.
+											  
+											  <p><img src="img - member3/Week7/LCDcircuit.png" width="800" height="400"></img><p></p>
+
+											  Now, I was able to finish the LCD circuit.  Shubo was going to implement the ESD protection and power circuit so I will need 
+											  to work with him to merge our changes.
+
+			
+			<!------------------------------------------------>
+			<br>-------------------------------------------------------------------------------------------Week 6:
+			------------------------------------------------------------------------------------------<br>
+			<!------------------------------------------------>
+			<br>Date:</b> 2/15/2024
+			<br>Time:</b> 9:00am
+            <br>Duration:</b> 3.00 hours
+			<br><br>
+			<b>Schematic Progress:</b>  In this session, I worked on the schematic and tried to integrate the LCD screen.  However there was some difficulty in trying
+										to understand the original schematic.
+
+										<p><img src="img - member3/Week6/LCDcircuit.png" width="800" height="400"></img><p></p>
+
+										It seems to me that this schematic doesn't contain everything. For example, the LCD_DATA only traces from the header and to a
+										data bus transciever.  But from there, it doesn't specify where to other side of the signals come from.  There are some github
+										repositories on the product page that may be helpful.
+
+										This is how the schematic looks like currently:
+
+										<p><img src="img - member3/Week6/schprog.png" width="800" height="400"></img><p></p>
+
+										The decoupling capacitors for the VDD/VCC pins have to be changed.  The ones in here are from the F0 schematics but should be
+										implemented like the F7 schematics.  The circuit on the left is the unfinished LCD circuit and would be replace the ILI9341 
+										chip on the top right. The middle right is the codec circuit and the bottom right is the controls circuit. In the controls 
+										circuit, I added debugging LED's.  However, Liam pointed out that we would probably only need them for the screen since we can
+										setup debugging for the other parts on there. 
+
+			<br>__________________________________________________________
+			<br>Date:</b> 2/14/2024
+			<br>Time:</b> 12:30pm
+            <br>Duration:</b> 3.00 hours
+			<br><br>
+			<b>Team Discussion and Schematic Discussion:</b>  In this session, I met with the team and discussed creating the orders to get our parts for the pcb.  Joe
+															  and Professor Walter also looked at our schematic and gave us some notes on how we could improve it.  The
+															  most important things were to add a programming header, an extra external clock, and to look at the diagram
+															  sheet for the F7 board for reference.
+
+														<br>  These are the 
+															  <a target="_blank" href="Files/refs/STM32F7 Nucleo.pdf">STM32F7 Nucleo Schematics</a>
+															  schematics I found for the F7 we have.
+
+														<br>  I also discussed with Shubo on what we should do to complete our schematics.  I was going to focus on the screen
+															  circuit and the debugging circuitry.
+
+			<br>__________________________________________________________
+			<br>Date:</b> 2/13/2024
+			<br>Time:</b> 2:00pm
+            <br>Duration:</b> 2.00 hours
+			<br><br>
+			<b>Updating Team Website and  Schematics update:</b>  In this session, I just worked on updating the team website.  I added the mechanical overview and references to some of
+																  the parts we decided to obtain for the project.  In lecture, I learned that I needed to add other things to the schematic.
+																  For example we need to add a reset button, isolate the external oscillators, add ESD and EMI protection, and add debugging
+																  circuity.  
+
+			<br>__________________________________________________________
+			<br>Date:</b> 2/12/2024
+			<br>Time:</b> 12:00pm
+            <br>Duration:</b> 4.00 hours
+			<br><br>
+			<b>Codec:</b>  In this session, I met up with Liam to work on the codec.  He was working on getting it to communicate with the F7 board.
+						   And last week, I needed to look into the capacitors on the codec circuit to see where they were connected.  I used the 
+						   multimeter in the lab to discover the traces.  Liam showed me how to discover the traces.
+
+						   <p><img src="img - member3/Week6/DMM.jpg" width="400" height="400"></img><p></p>
+
+						   If you press the "shift" button and the "Ω" button, the continuity mode will be set.  When you connect the positive and
+						   negative leads to a trace that is connected, it will beep.  With this, I was able to find out that all of the capacitors 
+						   are connected in parallel to VCC and VCCA.  They are decoupling capacitors to separate the digital and analog power.  Now,
+						   I was able to finish the codec circuit in the schematic.
+			
+			<!------------------------------------------------>
+			<br>-------------------------------------------------------------------------------------------Week 5:
+			------------------------------------------------------------------------------------------<br>
+			<!------------------------------------------------>
+
+			<br>Date:</b> 2/8/2024
+			<br>Time:</b> 9:00am
+            <br>Duration:</b> 4.17 hours
+			<br><br>
+			<b>Schematic Design:</b>  In this session, I met up with Liam so we can start working on integrating the codec onto the new F7 board.  He first 
+									  debriefed me on how he he was able to get it working for the Arduino. We will be connecting them via I2S(SAI) and I2C.
+									  Some of the differences are the commands for transmitting through those buttons.  There are also may be different addresses
+									  we have to set.  Since the connections would be the same, we set that up first and decided to work on the code later.
+
+									  <p><img src="img - member3/Week5/ioc.png" width="200" height="200"></img>
+										<img src="img - member3/Week5/I2s.png" width="200" height="200"></img>
+										<img src="img - member3/Week5/I2s2.png" width="200" height="200"></img>
+									</p>
+
+								<br>This is the IOC file for the codec.  We initialized SAI1.  Setting A to 'Master' and checking the 'I2S/PCM protocol'. We also 
+									set B to 'Synchronous Slave' and checked the 'I2S/PCM protocol'.  Then in parameter settings, 'Audio Mode' to 'Master Transmit',
+									'Audio Frequency' to '44.1 KHz', and 'Data Size' to '16 Bits'.
+
+								<p><img src="img - member3/Week5/I2C.png" width="200" height="200"></img><p>
+
+								We then also intialized the I2C2, setting the 'I2C Speed Frequency' to '10' KHz.<br>
+
+								<p><img src="img - member3/Week5/F7codec.jpg" width="400" height="300"></img></p>
+								To the codec we set 'SAI1_SD_B' pin to the 'MISO' pin, 'SAI1_SD_A' pin to the 'MOSI' pin, 'SAI1_FS_A' pin to the 'ADCL' and 'DACL'
+									pins, and the 'SAI1_SCK_A' pin to the 'SCK' pin.  And then for the I2C we just connect the SDA and SCL pins together.<br>
+
+								
+								<br>After this, I started to work individually on the schematic in KiCad.  For power, Schubo suggested to use the same as the STMF0 we used
+									in 362 lab.  
+								
+								<p><img src="img - member3/Week5/power.png" width="200" height="100"></img><p>
+								This is the power circuit.<br>
+								<p><img src="img - member3/Week5/noisebead.png" width="200" height="100"></img><p>
+								This is the circuit for noise.<br>
+
+								<br>We will also be replicating the same circuit as the codec board.  Like this.
+								<p><img src="img - member3/Week5/codecschem.png" width="400" height="300"></img><p>
+								<br>However there are some complications.  The VCC's in the schematic connect to one of the VCC configurations on the bottom.  
+									It is not clear from the datasheet which on is which so me and Liam will have to discern them later.
+								<p><img src="img - member3/Week5/schem.png" width="700" height="600"></img><p>
+								For now this is the schematic so far.<br>
+
+								<br> Another note: The ILI9341 is the chip for the touch LCD screen. For now we only have the non touch screen to work which
+									would be another symbol for the schematic.
+
+			<br>__________________________________________________________
+			<br>Date:</b> 2/7/2024
+			<br>Time:</b> 11:00pm
+            <br>Duration:</b> 4.00 hours
+			<br><br>
+			<b>Team Discussion and Mechanical Overview:</b> In this session me and my team discussed the next steps in our project.  I researched two products that our similar to our
+															project.  This is one example:
+
+															<p><img src="img - member3/Week5/audiointerface.png" width="300" height="300"></img></p>
+
+														<br>There were a couple features that I thought were viable to use for our design.  We could slant the interface so the user can
+														    have a better ergonomic view.  It is also a good idea to put all of the ports in the back to reduce clutter.  There is also
+															the the aspect of pore holes on the side and back for heat dissipation.<br>
+
+														<br>Liam brought up the complications with slanting the design.  Since the ports are sitting flat and the interface is slanted, 
+															we would probably have to create separate PCB's for that and connect them somehow.  One solution is that we could just slant
+															the screen, separating it from the PCB with a ribbon cable, and keep the rest of the design flat. However we would have to see
+															how the design pans out.<br>
+
+														<br>Also in this session, Joe was able to find us an <a target="_blank" href="https://www.st.com/en/evaluation-tools/nucleo-f746zg.html">STM32F746ZG - Nucleo</a> which has more access to pins for the F7 chip.  This allows
+															us to integrate everything we have done so far on this board. 
+
+			<br>__________________________________________________________
+			<br>Date:</b> 2/5/2024
+			<br>Time:</b> 12:00pm
+            <br>Duration:</b> 3.00 hours
+			<br><br>
+			<b>Schematic:</b> In this session, I met up with Liam and discussed the top level design of our schematic.  Schubo and I will be creating
+												  the pcb design. This is the rough draft of what we came up with.
+
+												  <p><img src="img - member3/Week5/PCBdraw.jpg" width="300" 
+													height="300"></img></p>
+
+											  <br>As you can see here, we will need a section for the screen, codec, power circuit, and controls. It was then I started
+												  to initiate my schematic in KiCad.  However it came to my attention that I couldn't set the pins of the MCU until we
+												  had a prototype together.  Currently, we have DSP and the touch GFX GUI from Jakub running on the F7.  Due to the 
+												  limited pins on the F7, we cannot interface any of our peripherals on it.  So our plan now is to create the prototype
+												  on the F4 and transition to the F7 for our final design.<br>
+
+											  <br>Since I am the design lead, I thought it would be a good idea to start working with each member on integrating their 
+											  	  contribution to the prototype.  I would have to work with Liam on the codec, Schubo with the screen, and Jakub with 
+												  the GUI and DSP.  It would have to be in this order since the sound is the baseline functionality of our project.
+												  We also can not fully test the GUI or DSP until the screen is integrated.  
+												  
+
+			<!------------------------------------------------>
+			<br>-------------------------------------------------------------------------------------------Week 4:
+			------------------------------------------------------------------------------------------<br>
+			<!------------------------------------------------>
+			
+			<br>Date:</b> 1/31/2024
+			<br>Time:</b> 10:30am
+            <br>Duration:</b> 3.50 hours
+			<br><br>
+			<b>Team Discussion and starting with the screen:</b> In this session, I talked with the team about the developing discoveries of our project.  There is very little audio
+																 usb libraries for stm.  So, we've been trying to transition into receiving and sending audio through analog jacks. 
+																 This poses a threat on our audio quality since we will be doing are DSP digitally, meaning that the signal will be converted
+																 many times. <br>
+															<br> I have also decided to move on to the screen aspect of our project.  We've learned that hosting and being a device counts
+																 as two psdr's.  So that means don't have to implement the multiplexing part of the our project and that implementing the screen
+																 will be a more of a priortiy.<br>
+															<br> We will be using an LCD screen that communicates through SPI.  This screen also has touch screen capabilites, allowing for more
+																 features in our stretch goals.
+
+															<br>Screen Link: <a target="_blank" href="https://www.adafruit.com/product/2090">2.8 TFT LCD with Cap Touch Breakout Board w/MicroSD Socket - EYESPI Connector </a>
+
+															<p><img src="img - member3/Week4/screen.jpeg" width="300" 
+																height="200"></img></p>
+															<br> Next week, I will try to implement this so that we can interface our GUI.		
+																 
+
+			<br>__________________________________________________________
+			<br>Date:</b> 1/30/2024
+			<br>Time:</b> 8:50am
+            <br>Duration:</b> 3.17 hours
+			<br><br>
+			<b>Trying to Fix integration problems:</b> This session, I started testing the setup I made last session.  One thing that I noticed was that the LED's I setup on the
+													   inputs and outputs of the chips were not lighting up.  It was then that I found out that the F4 board was not sending nor
+													   receiving enough voltage to the entire circuit.  I then switched to the power supply to send the circuit 4 volts.  However, the circuit
+													   wasn't behaving consistently.  I tested different chips and breadboards but could not yield success.  It was then that I read
+													   this part of the multiplexer chip datasheet.<br>
+
+													   <p><img src="img - member3/Week4/gstrobe.png" width="300" 
+														height="50"></img></p>
+
+														In order to enable to inputs, "G bar" must be set logic low.  This partly explains why there was inconsistent behavior with the 
+														chip, since nothing was connecting it to ground, it was affected by its neighboring voltages.  If you refer to the pinout below,
+														Its right below the outputs.  After correcting this, the circuit was able to behave correctly.  I also have yet to implement
+														debouncing into the encoder buttons which is important.
+
+			<br>__________________________________________________________
+			<br>Date:</b> 1/29/2024
+			<br>Time:</b> 11:00am
+            <br>Duration:</b> 4.17 hours
+			<br><br>
+			<b>Trying to Multiplex Rotary Encoders:</b> In this session, I tried to start multiplexing the rotary encoders.  I added another rotary encoder and two 74HC151 chips,
+														which are 8 inputs and 1 output.  I followed the pinout on the datasheet which can be found in the our 
+														<a target="_blank" href="https://engineering.purdue.edu/477grp12/Files/references.html">references</a> section.
+
+														<p><img src="img - member3/Week4/8to1mpinout.png" width="300" 
+															height="200"></img></p>
+
+														Since each rotary encoder has two channels. I would set the A and B channels to their own respective multiplexer.  Then I
+														go through each input and see how frequent each rotary encoder is being moved.  But first, instead of jumping to that point,
+														I simply wanted to switch inbetween inputs manually.  So now, I hookup the outputs of each multiplexer to the timer with the
+														encoder channels.  Then I set gpio out pins to the select pins of the multiplexer.  Here is the ioc file of that configuration.
+
+														<p><img src="img - member3/Week4/iocpinout.png" width="300" 
+															height="200"></img></p>
+
+														The timer 1 channels are setup just like timer 2 from last week.  I switched timers to avoid conflicts with the ADC which we
+														could potentially use. 
+
+														<br>This is how I setup the hardware.
+
+														<p><img src="img - member3/Week4/circuit.jpg" width="500" 
+															height="400"></img></p>
+
+														<br>The two chips on the bottom are the multiplexer chips.  I've also added the rotary encoder buttons as external interrupts.
+															They are pulled up, so I've added a hex inverter chip (which is the top chip) to make it behave like a pull down push button.
+															I'm aware that the circuit is messy, I'll try to get the pcb videos done by next week so I can make a schematic.
+
+														<p><img src="img - member3/Week4/EXTIioc.png" width="300" 
+															height="200"><img src="img - member3/Week4/EXTIcode.png" width="300" 
+															height="200"></img></p>
+														
+														<br>This is the extra code I have added for the encoder buttons. The basic idea is that when a rotary encoder is pressed, the 
+															board will set the select pins to output its channels' output.  Then it will control the value of timer 1's counter. I wanted
+															to test this setup before I go into autonomous scanning, where the external interrupts to set the select pins are not necesary
+															and each rotary encoder will be able to read.
+														<br>Note that the overall code should behave as last weeks, continous printing of timer 1's counter to the PuTTY terminal.  The 
+															only difference now is that the interrupts will signify which rotary encoder can control it.  
+
+
+
+
+
+			<!------------------------------------------------>
+			<br>-------------------------------------------------------------------------------------------Week 3:
+			------------------------------------------------------------------------------------------<br>
+			<!------------------------------------------------>
+			<br>Date:</b> 1/25/2024
+			<br>Time:</b> 10:00am
+            <br>Duration:</b> 1.50 hours
+			<br><br>
+			<b>Basic interface success:</b>  In this session, I was able to successfully interface the rotary encoder and print values to a PuTTY terminal.
+											First off, for the UART printing, I realized that I did not connect the board and the TTL chip correctly.
+											Instinctively, I connected the RX pins together and the TX pins together.  It wasn't until I found this image that
+											I discovered that it should be switched.
+											<p><img src="img - member3/Week3/TXRX.png" width="300" 
+												height="100"></img></p>
+											After fixing this, the F4 board was able to print to a PuTTY Terminal. This is how I set it up.
+											<p><img src="img - member3/Week3/UARTPin.png" width="600" 
+												height="400"></img></p>
+											1) I set up the UART pin like this in the .ioc file.  This tells me which pins on the board are which. Make sure
+											the baud rate is set to 115200.<br>
+
+											<p><img src="img - member3/Week3/UARTcode.png" width="600" 
+												height="200"></img></p>
+											2)Sample code of how to output to terminal.<br>
+
+											<p><img src="img - member3/Week3/ttl.jpg" width="600" 
+												height="400"></img></p>
+											3)This is a picture of the USB TTL chip.  The connections should be according to what the pinout says. Here it is PA2 & PA3.
+											Note that RX should go to TX and vice versa. CTS and GND should go to ground.<br><br>
+
+											<p><img src="img - member3/Week3/device manager.PNG" width="300" 
+												height="200"><img src="img - member3/Week3/puttysetup.PNG" width="300" 
+												height="200"></img></p>
+											4)If you go to device manager on windows, you can see which port the TTL chip is connected to. Then you enter the COM into putty.
+											Don't forget to set the baud rate to the same as earlier.<br>
+
+											<p></p><img src="img - member3/Week3/puttywindow.PNG" width="600" 
+												height="400"></p>
+
+											5)Now a terminal window should popup and when code is loaded onto the board, it should printed here.<br>
+
+											<br>This is how I setup reading from the rotary encoder.
+
+											<p></p><img src="img - member3/Week3/1-25-1.png" width="200" 
+												height="300"><img src="img - member3/Week3/1-25-2.png" width="200" 
+												height="233"></p>
+											1)Setup TIM2 to read both channels A and B.  This means setting it to "Encoder Mode" in "Combined Channels",
+											"Counter Period" to 65535, "auto-reload preload" enabled, "Encoder Mode" to "TI1 and TI2", and the both "input filter"s
+											to 10.<br>
+											<p></p><img src="img - member3/Week3/1-25-3.png" width="200" 
+												height="300"></p>
+											2)Setup TIM3 to output the encoded channels from TIM2 as PWM.  Set "Clock Source" to "Force Output CH1".  Other sources
+											say "PWM Generation CH1" but this is what worked for me. Make sure the Counter Period and the auto-reload preload is 
+											the same.<br>
+											<p></p><img src="img - member3/Week3/1-25-4.png" width="200" 
+												height="200"></p>
+											3)In the .ioc file, I also set PA4 as a GPIO Input for the button part of the rotary encoder which is also wired the same
+											as the first button I setup.<br>
+											<p></p><img src="img - member3/Week3/1-25-5.png" width="350" 
+												height="300"></p>
+											4)This is the code I put in main.  GPIO_PIN_13 is the orange LED on the F4 board.  It will be toggled if the rotary encoder
+											  value is 0 since it configured as a pullup.  Only line 127 should be noted. It will change the delay (thus the frequency)
+											  of the code.  The count is shifted to changed sensitivity of the increments. Higher shifts means more increments to change 
+											  the value. The last part of the code simply packages messages to send to UART. <br>
+											5)This is a demo of everything together.<br>
+											<video width="320" height="240" controls>
+												<source src="Demo1.mp4" type="video/mp4">
+												<source src="Demo1.ogg" type="video/ogg">
+											  Your browser does not support the video tag.
+											  </video>
+											<br>There are a few notes as a result.  I will have to implement debouncing for the rotary encoder button.  When the button 
+												is held, the LED continues to be toggled.  I assume that the ideal behavior is to toggle once when the button is pressed
+												and released.  I will also have to try to multiplex multiple rotary encoders and the buttons.<br>
+
+
+
+			<br>__________________________________________________________
+			<br>Date:</b> 1/24/2024
+			<br>Time:</b> 10:30am
+            <br>Duration:</b> 4.17 hours
+			<br><br>
+			<b>Lab Computer transition attempt:</b>  In this session, I tried to get STM32CubeIDE on the lab computer and transfer my project over.
+													However I wasn't able to correctly export/import as the project was not building.  After this I
+													decided to try to install putty on my MAC.  This was successful but I still wasn't able to get
+													any output.  It wasn't until my teamates pointed out that I needed a USB TTL chip, connect the 
+													UART from the F4 board to that and then connect it to the computer. A first attempt at this failed.
+													It would be my objective next session to achieve this.
+
+
+			<br>__________________________________________________________
+			<br>Date:</b> 1/23/2024
+			<br>Time:</b> 1:00pm
+            <br>Duration:</b> 3.17 hours
+			<br><br>
+			<b>Rotary Encoder and new print function:</b>  I was researching methods on how to implement rotary encoders into the F4 board. Unfortunately
+														   somewhere in the process, printf stopped working and I spent most of my time trying to fix it.
+														   At some point, I decided that I've wasted too much time trying to fix it and have determine to
+														   try to find another method.
+			<br>After this, I focused more on implementing to rotary encoder.  My understanding was that there are channels A and B.  These two channels would pulse
+				in order to signify an increment and the order of the two defines the direction.  I spent some time trying to observe this on the oscilloscope but 
+				wasn't successful.  I thought that perhaps I had the pins wrong.  I spent some time trying to find a datasheet for the rotary encoder given to me by
+				Joe.  It didn't occur to me, in which I did, that I should just ask Joe himself.  The two prongs on one side is the button of the rotary encoder and
+				one side should be pulled up.  The other side was channel A, common ground, and channel B.
+			<p><img src="img - member3/Week3/RotEn.jpg" width="600" 
+				height="400"></img></p>
+			I put an LED for each channel (left side) so that I could observe the pulses.  
+			<br>The channels should be pulled-up which was my biggest, misconception.  After hooking it up right, I was able to observe it on the oscilloscope.  
+			<p><img src="img - member3/Week3/RotEnOscope.jpg" width="600" 
+				height="400"></img></p>
+			On the oscilloscope, I turned the encoder each way.  As you can see at each instance, one channel pulse occurs earlier than the other. This is how one would discern
+			different directions.
+			<br>Now, I was looking into some tutorials on how to get values from the rotary encoder.  But then I ran into to obstacle of printing the values.
+			<br>Another method of printing I found was using PuTTY.  However, I was working on a MAC, and the installation seemed like it would raise complications 
+				in the future.  I've decided to transtition to the lab computer which I would have to setup in another session.
+
+			<br>__________________________________________________________
+			<br>Date:</b> 1/22/2024
+			<br>Time:</b> 2:00pm
+            <br>Duration:</b> 1.50 hours
+			<br><br>
+			<b>Trying to print:</b>  I thought that implementing a print function would be useful when implementing the rotary
+									encoder, so we can observe what values were are sending to the DSP functions.  I was 
+									researching and found multiple methods but this one seemed to be the simplest.
+									
+			<br>First enable SW0 on the pinout and configure the code. 
+			<p><img src="img - member3/Week3/1-22-7.png" width="300" 
+				height="200"></img></p>
+			<br>Then insert this code in main.c and below int main in the user section.
+			<p><img src="img - member3/Week3/1-22-sendchar.png" width="300" 
+				height="100"></img></p>
+			<br>Then go to debugger configurations and enable SWV.  The clock should be the max clock value found
+				in clock configurations.  Then start debugging.
+			<p><img src="img - member3/Week3/1-22-8.png" width="250" 
+				height="100"></img></p>
+			<br>Click on Window and go to SWV ITM console.
+			<br>Click on the configurations for the SWV console and enable port 0.
+			<p><img src="img - member3/Week3/1-22-9.png" width="500" 
+				height="300"></img></p>
+			<br>Click start trace and resume the code.
+			<p><img src="img - member3/Week3/1-22-10.png" width="250" 
+				height="100"></img> 
+			<img src="img - member3/Week3/1-22-11.png" width="250" 
+				height="100"></img></p>
+			<br>Now printf functions should print to port 0.
+			
+			<br>__________________________________________________________
+			<br>Date:</b> 1/22/2024
+			<br>Time:</b> 10:40am
+            <br>Duration:</b> 2.50 hours
+			<br><br>
+			<b>Getting Started with the F4 board:</b> I looked up a video tutorial on how to get started with the STM32F407 board.
+													  the goal of this session was to get on board buttons and LED's working.
+			
+			<br>Very first step is downloading STM32CubeIDE.  Then plugged in the board and set the pins.
+			<br>Set RCC to HSE Crystal/Ceramic.
+			<p><img src="img - member3/Week3/1-22-2.png" width="250" 
+				height="100"></img></p>
+			<br>Set sys to serial wire for debugging purposes.
+			<p><img src="img - member3/Week3/1-22-1-2.png" width="250" 
+				height="100"></img></p>
+			<br>Set "PD15" (Blue LED between the two onboard buttons) to GPIO output.  You can control
+			click to see which pins can be used for this output.
+			<p><img src="img - member3/Week3/1-22-PD15.png" width="250" 
+				height="100"></img></p>
+			<br>Click on nvic settings and checkmark the RCC global variable.
+			<p><img src="img - member3/Week3/1-22-nvicglob.png" width="250" 
+				height="150"></img></p>
+			<br>Click on the gear with a grey rod sticking out to "configure code" related to the pins
+			that were just set.
+			<p><img src="img - member3/Week3/1-22-gear.png" width="100" 
+				height="100"></img></p>
+			<br>At this point I had to sign up for an STM account in order to download new firmware
+			for the board and other standard libraries. 
+			<br>
+			<br>Set "PA0" to be a GPIO external interrupt.  Once pins like this are set, other pins and
+			options will become yellow to signify that they are now unavailable.
+			<p><img src="img - member3/Week3/1-22-warnings.png" width="250" 
+				height="300"></img></p>
+			<br>Enable NVIC interrupt. Then Reconfigure code.
+			<p><img src="img - member3/Week3/1-22ELI.png" width="250" 
+				height="100"></img></p>
+			<br>Then I entered this code.
+			<p><img src="img - member3/Week3/1-22-maincode.png" width="250" 
+				height="100"></img></p>
+			<p><img src="img - member3/Week3/1-22-6-2.png" width="600" 
+				height="300"></img></p>
+			<br>The first image is in main.c and the second image is in stm32f4xx_it.c
+			Now once the code is loaded, the blue led will blink.  Then once the button is pushed,
+			the frequency will decrease.
+			<br>Then I setup an external button that was connected to another interrupt that does the 
+			the same thing.
+			<p><img src="img - member3/Week3/Button.jpg" width="400" 
+				height="300"></img></p>
+			I had the button connected to PA9 with a pull down resistor. The code is the same as the image above
+			except "GPIO_PIN_" should be 9.
+			<br>The next part to this aspect is to configure multiple buttons. After some brief research, my first initial thought is that I have to use a multiplexer
+			that takes in many inputs and outputs one.  The multiplexer will also take in a select signal
+			that is 2^n bits.  I will then have to initialize the adc to constantly poll all the inputs.
+			I think this will only be necesary if our design needs more than 2 buttons.  
+
+
+												
+			<br>
+            <!------------------------------------------------>
+			<br>-------------------------------------------------------------------------------------------Week 2:
+			------------------------------------------------------------------------------------------<br>
+			<!------------------------------------------------>
+			<br>Date:</b> 1/19/2024
+			<br>Time:</b> 1:30pm
+            <br>Duration:</b> 3.75 hours
+			<br><br>
+
+			<b>Team Meeting:</b> In this team meeting we went over more of the specifics for our design.  We confirmed to proceed with the idea of using two MCU's for our 
+								 project.  One to handle the digital signal processing and act as a device and another to act as a USB host for the microhpone and to
+								 interface the inputs.  This means that I had to research another MCU to start button interfacing process.<br>
+									<br>
+								 After looking at the possible deadboards available in the lab, I've proposed the 
+								 <br>STM32F407VG: <a target="_blank" href="https://www.st.com/en/evaluation-tools/stm32f4discovery.html">https://www.st.com/en/evaluation-tools/stm32f4discovery.html</a>
+								 <br>Data sheet: <a target="_blank" href="https://www.st.com/resource/en/datasheet/stm32f405rg.pdf">https://www.st.com/resource/en/datasheet/stm32f405rg.pdf</a>
+
+								 <p><img src="img - member3/Week1&2/stmf4.jpeg"></img></p>
+
+								 We determined that this was sufficient enough for our prototype.  Its timers has a high enough frequency to interact with the rotary encoders.
+								 It had at least 3 I2C's, one for the LCD screen, another for the inputs, and another to send data to the other MCU.  It also has at least one I2S for when it has to communicate with 
+								 the other MCU for the sound. Joe wasn't here at this time.  Meaning I will have to checkout an F4 board next Monday and start to get familiar with it.
+
+			<br>__________________________________________________________
+            <br>Date:</b> 1/19/2024
+			<br>Time:</b> 8:50am
+            <br>Duration:</b> 4.25 hours
+			<br>
+			<br>
+			<b>Getting started with STM32F746NG:</b> I tried to get familiar with the F7 board.  I first tried to recreate the initialization process for the STM32 we used
+													in ECE362.  However, I wasn't able to get Eclipse to find the standard peripheral library for the F7 board.  Recent 
+													tutorials show that they use the STMCube IDE.  This I will try to use at a later time.  I wanted to start trying to 
+													interface a button with the F7 board.  Before I could attempt this, I went to discuss with my other teammates.
+			<br>
+
+			
+			<!------------------------------------------------>
+			<br>-------------------------------------------------------------------------------------------Week 1:
+				------------------------------------------------------------------------------------------<br>
+			<!------------------------------------------------>
+            <br>Date:</b> 1/12/2024
+			<br>Time:</b> 1:20pm
+            <br>Duration:</b> 4.25 hours
+			<br><br>
+			<b>Inital Deadboard Research:</b> 
+			<br>I first searched for possible deadboards we could use from the sheets on BrightSpace.  There were multiple core aspects I
+				researched.  Liam, our team lead, mentioned that he was experienced with OpenGL.  I was also focused on searching for a board 
+				that was compatible with digital signal processing. 
+											
+			<br> 
+			<br> I found a github repository that had working software to use OpenGL on an STM32F4: <a target="_blank" href="https://github.com/dizcza/cOpenGL">https://github.com/dizcza/cOpenGL</a>
+			<br> This lead me to decide to use a microcontroller in the STM32 F series.  
+			<br> I decided to highlight the STM32F746NG: <a target="_blank" href="https://www.st.com/en/evaluation-tools/32f746gdiscovery.html">https://www.st.com/en/evaluation-tools/32f746gdiscovery.html</a>
+			<br>
+			<p><img src="img - member3/Week1&2/stm32f7.jpg"></img></p>
+			<br> At first, This microcontroller seems to be an ideal candidate for a deadboard.  It includes a fairly recent model processor
+			 	and an LCD screen. It also has USB and audio jacks which makes it flexible for any possible transitions in our design at a later
+				date. This will be the center of our design in the prototyping process.  Next week, I will need to understand how to
+				operate the microcontroller and start to prototype how to integrate the hardware interface of our project with it.
+			<br>__________________________________________________________
+			<br>Date:</b> 1/10/2024
+			<br>Time:</b> 1:00pm
+			<br>Duration:</b> 3.00 hours <br>
+			<br><b>Team Meeting / Discussion:</b>
+			<br>In our team meeting, we discussed the high level design of our project.  The essential components of our design would be an
+				lcd screen, an MCU, rotary encoders, and buttons.  The device would be powered by the USB connection which is up to 5 volts.
+				We went over the possbilites of an equalizer, compression and pitch effects.  We then obtained a rotary encoder and tried to
+				find out how its output behaves.  We then discovered the idea that the device would have to act as a USB host for the microphone
+				and a device to the computer.  This brought up the possibilities of two MCU's for our prototype.  For the future, we would have
+				to find a possible deadboard to start the process.
+
+			
+        </div>
+	
+		<!-- Instantiate global footer. Any changes to the footer should be made through the top-level file "footer.html" -->
+		<div id="footer"></div>
+    </div>
+</div>
+
+<!--JS-->
+<script src="js/jquery.js"></script>
+<script src="js/jquery-migrate-1.1.1.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#header").load("header.html");
+	$("#menu").load("navbar.html");
+	$("#footer").load("footer.html");
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Joshua Hom Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+<!-- Navagation Bar-->
+<div class="NAVBAR">
+    <div class="">
+        <div class="NBCOL"><a href="#home"> HOME </a></div>
+        <div class="NBCOL"><a href="#about"> ABOUT </a></div>
+        <div class="NBCOL"><a href="#projects"> PROJECTS </a></div>
+        <a href="mailto: joshjhom@gmail.com"><img class="NBLOGO NBLsmol" src="logo/mail.jpg"></a>
+        <a href="https://github.com/jj-hom" target="_blank"><img class="NBLOGO" src="logo/github.jpg"></a>
+        <a href="https://www.linkedin.com/in/joshua-hom/" target="_blank"><img class="NBLOGO" src="logo/linkedin.jpg"></a>
+        <a href="code.html" target="_blank"><img class="NBLOGO" src="logo/code.jpeg" style="margin-left:-4px;"></a>
+        <img class="NBLOGO" src="logo/cat.gif" style="margin-right:20px;"></a>
+    </div>
+</div>
+
+<div class="NBSPACE"></div>
+
+
+<!-- Slideshow container -->
+<div class = "sswrapper" id ="home">
+    <div class="ssc">
+        <div class="IMG fade" id="animages1"></div>
+        <div class="blPORTtxt">Open to Work</div>
+    </div>
+
+    <div class="ssc">
+        <div class="IMG fade" id="animages2"></div>
+    </div>
+
+    <div class="ssc">
+        <div class="IMG fade" id="animages3"></div>
+    </div>
+
+    <div class="ssc">
+        <div class="IMG fade" id="animages4"></div>
+    </div>
+
+    <div class="ssc">
+        <div class="IMG fade" id="animages5"></div>
+        <div class="brPORTtxt">Los Angeles, California</div>
+    </div>
+
+    <div class="title2">Joshua Hom</div>
+    <div class="title">Joshua Hom</div>
+    <div class="subtitle">                                   Computer Engineer                                   </div>
+</div>
+
+<div class="background" id="about">
+    <canvas class="anim" id = "move"></canvas> 
+    <div class="pfp"><img src="img/portrait.jpeg"></div>
+    <div class="pfptitle">Hello!</div>
+    <div class="pfptext">My name is Josh. I graduated from Purdue University - West Lafayette in 2024 with a bachelors
+                        in Computer Engineering. I have a focus in Computer Architecture and embedded systems. My two 
+                        proudest achievements are having built a fully functional processor in System Verilog and engineering
+                        an electronic product fully in house. My hobbies are cooking, playing games, and exercising.  Feel
+                        free to reach out about anything.
+    </div>
+        
+    
+</div>
+
+<h1 style="font-size:5vw; margin-top:35%; text-align:center; padding:0; margin-top:2%;" id="projects">Projects</h1>
+<div class="line"></div>
+
+<a href="projects/mic/mic.html">
+<div class="background2">
+    <div class="workyear">Spring 2024</div>
+    <div class="ptitle">Systems Integration Lead, Microphone Interface</div>
+    <img class="pimg" src="img/MIgroup.JPG">
+    <div class="pdesc">My team and I created a device that recieve input/sends output from/to a normal audio jack.  
+    It applies digital signal processing to the recieved analog signal and sends it out in real time.  We 
+    implemented the distortion, 5 band equalization, and delay.  The product is powered by USB connection.
+    The packaging includes 3 knobs, 2 buttons, and an LCD screen to control the effects.
+    </div>
+    <div class="tagbox">
+        <div class="bubble">C/C++</div>
+        <div class="bubble">STM32CubeIDE</div>
+        <div class="bubble">KiCad</div>
+        <div class="bubble">PCB Layout</div>
+        <div class="bubble">Schematic</div>
+        <div class="bubble">PCB Assembly</div>
+        <div class="bubble">Blender</div>
+        <div class="bubble">AutoCad</div>
+        <div class="bubble">Digital Signal Processing</div>
+        <div class="bubble">I2C</div>
+        <div class="bubble">SPI</div>
+        <div class="bubble">3D Printing</div>
+    </div>
+</div>
+</a>
+
+
+<a href="projects/cpu/cpu.html">
+    <div class="background2">
+        <div class="workyear">Fall 2023</div>
+        <div class="ptitle">RISC System Verilog Processor                           </div>
+        <img class="pimg" src="img/cpu.JPEG">
+        <div class="pdesc">A classmate Stephen and I partnered to design, simulate, and test a processor in system verilog.  This was 
+                           a dual core processor that includes a pipelined datapath, I-cache, D-cache, and a memory controller.
+                           The end result was a processor that could communicate and funtion with a simulated RAM and execute
+                           parallel ASM files.
+        </div>
+        <div class="tagbox">
+            <div class="bubble">Computer Architecture</div>
+            <div class="bubble">VHDL</div>
+            <div class="bubble">FPGA</div>
+            <div class="bubble">RISC-V</div>
+            <div class="bubble">MIPS</div>
+            <div class="bubble">QuestaSim</div>
+            <div class="bubble">Caches</div>
+            <div class="bubble">Assembly</div>
+            <div class="bubble">Performance Analysis</div>
+            <div class="bubble">Verification</div>
+            <div class="bubble">SRAM/DRAM</div>
+            <div class="bubble">Block Diagrams</div>
+        </div>
+    </div>
+</a>
+
+
+<a href="projects/esp32/esp32.html">
+    <div class="background2">
+        <div class="workyear">Fall 2023</div>
+        <div class="ptitle">ESP32 Motion Detection System                          </div>
+        <img class="pimg" src="img/esp321.png">
+        <div class="pdesc">Using an esp32 and acclerometer/gyroscope module, I created an anti-theft detection system that
+                           can be voice (de)activated from your phone using Google Home.  This item is intended to be placed
+                           in your personal bag or item. When motion is detected, the system will send an alert notification 
+                           to your phone.
+        </div>
+        <div class="tagbox">
+            <div class="bubble">ESP32</div>
+            <div class="bubble">Micropython</div>
+            <div class="bubble">Embedded Systems</div>
+            <div class="bubble">IFTTT Applets</div>
+            <div class="bubble">Webhooks</div>
+            <div class="bubble">Google Assistant</div>
+            <div class="bubble">ThingSpeak Server</div>
+            <div class="bubble">JSON Packages</div>
+        </div>
+    </div>
+</a>
+
+
+<div class="bottom"></div>
+
+<script src = "index.js" charset="UTF-8"></script>
+</body>
+
+</html> 
