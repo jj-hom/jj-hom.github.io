@@ -2,8 +2,8 @@ function showSlides() {
     var num, x, y, i, find; 
     var imagesArray = ["Purdue banner Engineering Fountain.jpeg", "Purdue Engineering Fountain 2.jpeg",
                        'mic1.jpg','mic2.jpg', 'mic3.jpg', 'mic4.png', 'mic5.png', 'mic5.png', 'mic7.jpg', 'mic8.png',
-                       'mic9.png', 'mic10.jpg', 'mic11.jpg', 'MIgroup.jpg', 'cpuoa.png', 'cpupl.png', 'cpusc.png',
-                       'cpuan.png', 'cpuis.png', 'cpuwa.jpg', 'esp321.png', 'esp323.png'
+                       'mic9.png', 'mic10.jpg', 'mic11.jpg', 'MIgroup.JPG', 'cpuoa.png', 'cpupl.png', 'cpusc.png',
+                       'cpuan.png', 'cpuis.png', 'cpuwa.JPG', 'esp321.png', 'esp323.png'
   ];
     var spotArray = ['animages1', 'animages2', 'animages3', 'animages4', 'animages5'];
 
